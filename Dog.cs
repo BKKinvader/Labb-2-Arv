@@ -7,46 +7,44 @@ namespace Labb_2_Arv
 {
     internal class Dog : Animal
     {
-        public string _Animal;
-        public string _Race;
-        public bool _Wild;
-        
+        protected int _legs = 4;
+        protected string _dog = "Dog";
 
         // Defaultkontrukttor
         public Dog()
         {
-            _Animal = "Dog";
-            _Race = "Shiba inu";
-            _Wild = true;
+            
         }
 
-
-       
-
-        public Dog(string _name, int _age, string _gender, bool _grooming, bool _feed) : base(_name, _age, _gender, _grooming, _feed) // base är för att ta med ARV från Animal
+        public Dog(string name, int age, string gender, bool hungry, string color, int legs) : base(name, age, gender, hungry, color) // base är för att ta med ARV från Animal
         {
-          
+            _legs = legs;
+            
         }
 
-        public void PrintDogInfo()
+        public string MakeSound()
         {
-            Console.WriteLine("Animal: {0}", _Animal);
-            Console.WriteLine("Race: {0}", _Race);
-            Console.WriteLine("Wild: {0}", _Wild);
-
+            Console.WriteLine("Tryck Enter för att lyssna på ljud");
+            Console.ReadLine();
+            return $"{_name} Säger Woff";
         }
 
-
-
-        public void makeSound()
+        public virtual string Healthy()
         {
-            string enter = Console.ReadLine();
-            switch (enter)
-            {
-                case "":
-                    Console.WriteLine("Hunden säger: Woff Woff");
-                    break;
-            }
+            if (_legs == 4)
+                return $"{_name} är 100% friskt";
+            else
+                return $"{_name} är inte 100% friskt";
+
+
+
         }
+
+        public string PrintType()
+        {
+            return _dog;
+        }
+
+
     }
 }

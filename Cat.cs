@@ -6,45 +6,46 @@ using System.Text;
 namespace Labb_2_Arv
 {
     internal class Cat : Animal
-    {   
-        public readonly string _Animal;  
-        public readonly string _Race;
+    {
         
+        protected string _cat = "Cat";
+        protected int _ears = 2;
 
-
-
+        // Defaultkontrukttor
         public Cat()
         {
-            _Animal = "Cat";
-            _Race = "Ragdoll";
+
         }
 
-        public Cat(string _name, int _age, string _gender, bool _grooming, bool _feed) : base(_name, _age, _gender, _grooming, _feed)
+        public Cat(string name, int age, string gender, bool hungry, string color, int ears) : base(name, age, gender, hungry, color) // base är för att ta med ARV från Animal
         {
-            
+            _ears = ears;
+
         }
 
-        public void PrintCatInfo()
+        public string MakeSound()
         {
-            Console.WriteLine("Animal: {0}", _Animal);
-            Console.WriteLine("Race: {0}", _Race);
-            
-
+            Console.WriteLine("Tryck Enter för att lyssna på ljud");
+            Console.ReadLine();
+            return $"{_name} Säger Meeeeeaaaaw";
         }
 
-
-        public void makeSound()
+        public virtual string Healthy()
         {
-            string enter = Console.ReadLine();
-            switch (enter)
-            {
-                case "":
-                    Console.WriteLine("Katten säger: Meaw Meaw");
-                    break;
-            }
+            if (_ears == 2)
+                return $"{_name} har 2 öron";
+            else
+                return $"{_name} har inte alla öron";
+
+
+
         }
 
+        public string PrintType()
+        {
+            return _cat;
+        }
 
-
+        
     }
 }

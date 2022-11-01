@@ -8,40 +8,57 @@ namespace Labb_2_Arv
     public class Animal
     {
   
-        public readonly string _Name;
-        public readonly int _Age;
-        public readonly string _Gender;
-        public readonly bool _Grooming = true;
-        public readonly bool _Feed;
+        public readonly string _name;
+        public readonly int _age;
+        public readonly string _gender;
+        public readonly bool _hungry = true;
+        public readonly string _color;
         
 
 
 
-        // Defaultkontrukttor
+        // Defaultcontructor
         public Animal() { }
 
-        //Kontrukltor med inmatade värden
-        public Animal(string _name, int _age, string _gender, bool _grooming, bool _feed)
+        //Constructor 
+        public Animal(string name, int age, string gender, bool hungry, string color)
         {
             
-            this._Name = _name;
-            this._Age = _age;
-            this._Gender = _gender;
-            this._Grooming = _grooming;
-            this._Feed = _feed;
+            this._name = name;
+            this._age = age;
+            this._gender = gender;
+            this._hungry = hungry;
+            this._color = color;
+        }
+
+        public string Run()
+        {
+            return $"{_name} Springer.";
+        }
+
+        public string Sleep()
+        {
+            if (_hungry == false)
+            {
+                return $"{_name} Sover gött";
+            }
+            else
+            {
+                return $"{_name} Kan inte sova för {_name} är hungrig";
+            }
+        
         }
 
         public void PrintInfo()
         {
-            
-            Console.WriteLine("Name: " + _Name);
-            Console.WriteLine("Age: " + _Age);
-            Console.WriteLine("Gender: " + _Gender);
-            Console.WriteLine("Need Grooming: " + _Grooming);
-            Console.WriteLine("Is Hungry: " + _Feed);
-            
-
+            Console.WriteLine($"Namn: {_name}");
+            Console.WriteLine($"Ålder: {_age}");
+            Console.WriteLine($"Kön: {_gender}");
+            Console.WriteLine($"Hungrig: {_hungry}");
+            Console.WriteLine($"Färg: {_color}");
         }
+
+       
 
 
 
