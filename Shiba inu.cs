@@ -7,17 +7,17 @@ namespace Labb_2_Arv
     internal class Shiba_inu : Dog
     {
 
-        protected int _teeth = 42; 
-
+        protected int _teeth = 42;
+        protected string _Race = "Shiba inu";
 
         public Shiba_inu()
         {
             
         }
 
-        public Shiba_inu(string name, int age, string gender, bool hungry, string color, int legs, int teeth) : base(name, age, gender, hungry, color, legs) // base är för att ta med ARV från Animal
+        public Shiba_inu(string name, int age, string gender, bool hungry, string color, int legs, int teeth) : base(name, age, gender, hungry, color, legs) 
         {
-            _teeth = teeth;
+            this._teeth = teeth;
         }
 
         public override string Healthy()
@@ -28,8 +28,11 @@ namespace Labb_2_Arv
                 return $"{_name} fattas några tänder eller ben";
             else
                 return $"{_name} är inte friskt";
-        }   
-
+        }
+        public void PrintRace()
+        {
+            Console.WriteLine(_Race);
+        }
 
 
     }

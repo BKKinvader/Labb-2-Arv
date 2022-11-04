@@ -17,15 +17,15 @@ namespace Labb_2_Arv
 
         }
 
-        public Cat(string name, int age, string gender, bool hungry, string color, int ears) : base(name, age, gender, hungry, color) // base är för att ta med ARV från Animal
+        public Cat(string name, int age, string gender, bool hungry, string color, int ears) : base(name, age, gender, hungry, color) 
         {
-            _ears = ears;
+            this._ears = ears;
 
         }
 
         public string MakeSound()
         {
-            Console.WriteLine("Tryck Enter för att lyssna på ljud");
+            Console.WriteLine("Tryck Enter för att lyssna på {0}", _name);
             Console.ReadLine();
             return $"{_name} Säger Meeeeeaaaaw";
         }
