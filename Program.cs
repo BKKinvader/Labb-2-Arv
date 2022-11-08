@@ -37,7 +37,7 @@ namespace Labb_2_Arv
             Console.WriteLine("--------&&-------");
 
 
-            Cat Misse = new Cat("Misse", 3, "Female", true, "Blue", 2);
+            Cat Misse = new Cat("Tom", 3, "Male", true, "Blue", 2);
             Console.WriteLine(Misse.PrintType());
             Misse.PrintInfo();
             Console.WriteLine(Misse.Healthy());
@@ -49,8 +49,9 @@ namespace Labb_2_Arv
             Mouse musen = new Mouse("Jerry", 3, "Male", true, "brown", "Cheese");
             Console.WriteLine(musen.PrintType());
             musen.PrintInfo();
-            musen.MouseVsCat();
             Console.WriteLine(musen.MakeSound());
+            musen.MouseVsCat();
+            
 
 
 

@@ -49,11 +49,11 @@ namespace Labb_2_Arv
             bool failsafe = true;
             do
             {
-                Console.WriteLine("Vill du attackera en katt ?");
+                Console.WriteLine("Vill du attackera en katt eller skippa genom att trycka på enter?");
                 string answer = Console.ReadLine().ToUpper();
                 if (answer == "JA")
                 {
-                    Console.WriteLine("Skriv din damage mellan 1 - 100");
+                    Console.WriteLine("Skriv din damage mellan 1 - 100"); 
                     int damage = int.Parse(Console.ReadLine());
                     HP = CatHP - damage;
                     failsafe = false;
